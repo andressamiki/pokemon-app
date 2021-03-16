@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonList } from '../../models/pokemon-list.model';
 import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
@@ -19,10 +20,9 @@ export class PokemonListComponent implements OnInit {
   }
 
   getPokemonList(){
-    this.pokeService.getList().subscribe((data : any)=> {
+    this.pokeService.getList().subscribe((data: PokemonList)=> {
       if(data){
-        console.log(data['results'])
-        this.pokemon = data['results'];
+        this.pokemon = data.results;
       }
     })
   }
