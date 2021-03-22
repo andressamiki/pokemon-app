@@ -7,4 +7,7 @@ export interface Pokemon{
 	order: string;
     weight: string;
     specie: any[];
+	sprites: any;
+	types: any;
+	moves: any;
 }
